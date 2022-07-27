@@ -27,7 +27,6 @@ setup(
     long_description_content_type='text/markdown',
     classifiers=[
         "Programming Language :: Python :: 3",
-        "license :: MIT License",
         "Operating System :: OS Independent",
     ],
     entry_points={
