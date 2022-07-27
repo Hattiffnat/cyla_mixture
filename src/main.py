@@ -1,5 +1,4 @@
-
-from PyQt5 import uic, QtWidgets, QtGui
+from PyQt5 import uic
 from PyQt5.QtWidgets import QPushButton, QPlainTextEdit, QApplication, QShortcut
 from PyQt5.QtGui import QKeySequence
 
@@ -11,12 +10,12 @@ class App(QApplication):
         self.cy_alphabet = 'аеёорсухАВЕЁЗКМНОРСТХ'
         self.la_alphabet = 'aeeopcyxABEE3KMHOPCTX'
 
-        self.main_window = uic.loadUi("design.ui")
+        self.main_window = uic.loadUi("src/design.ui")
 
         self.btn_make_mix = self.main_window.findChild(QPushButton, 'pushButton_gen_translite')
         self.btn_make_mix.clicked.connect(self._make_mix)
 
-        self.shortcut_make_mix = QShortcut(self.btn_make_mix)
+        self.shortcut_make_mix = QShortcut(self.main_window)
         self.shortcut_make_mix.setKey(QKeySequence('Ctrl+Enter'))
 
         self.text_form_input = self.main_window.findChild(QPlainTextEdit, 'plainTextEdit_input')
